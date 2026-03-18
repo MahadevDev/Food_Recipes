@@ -1,5 +1,5 @@
 const User = require("../Schema/User");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 const ForgotPassword = async (req, res) => {
   try {
