@@ -3,6 +3,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
 // Import routes
@@ -20,7 +21,8 @@ const allowedOrigins = process.env.CORS_ORIGINS
   : [
       '',
       'http://localhost:3000',
-      'http://localhost:3001'
+      'http://localhost:3001',
+      'https://food-recipes-2-u6ck.onrender.com'
     ];
 
 const corsOptions = {
@@ -60,6 +62,7 @@ app.use((req, res, next) => {
 // === Built-in Middleware ===
 
 app.use(express.json()); // Parse incoming JSON
+app.use(express.static(path.join(__dirname, 'public'))); // Serve static files with absolute path
 
 // === Test Route ===
 

@@ -1,5 +1,19 @@
 {
+  "name": "food-recipes-app",
+  "version": "1.0.0",
+  "description": "Food Recipes App - Full Stack",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start"
+  },
   "dependencies": {
-    "bcryptjs": "^3.0.3"
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
   }
 }
