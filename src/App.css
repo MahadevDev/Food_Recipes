@@ -373,12 +373,16 @@ nav ul li a.active {
   .main-content {
     margin-top: 80px !important;
     padding: 1rem;
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 80px);
+    width: 100%;
+    overflow-x: hidden;
   }
   
   .Recipes {
     padding: 1rem 0;
     margin-top: 60px;
+    width: 100%;
+    min-height: calc(100vh - 60px);
   }
   
   .recipe-card {
@@ -390,32 +394,37 @@ nav ul li a.active {
     margin-top: 80px !important;
     padding: 1rem;
     max-width: 100%;
+    min-height: calc(100vh - 80px);
   }
   
   /* Fix all page containers */
   .container-fluid {
     padding-top: 80px !important;
     min-height: calc(100vh - 80px);
+    width: 100%;
+    overflow-x: hidden;
   }
   
   /* Ensure all routes display properly */
   .App > div:last-child {
     min-height: calc(100vh - 60px);
     margin-top: 60px;
+    width: 100%;
   }
   
-  /* Fix login/register pages */
-  .login-layout,
-  .signup-layout {
-    margin-top: 70px !important;
-    padding: 1rem;
-    min-height: calc(100vh - 60px);
+  /* Fix body and html */
+  body, html {
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
   }
   
-  /* Fix add recipe page */
-  .add-recipe-container {
-    margin-top: 80px !important;
-    padding: 1rem;
+  /* Fix all content containers */
+  .container, .container-fluid {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
@@ -429,11 +438,15 @@ nav ul li a.active {
     margin-top: 70px !important;
     padding: 0.5rem;
     min-height: calc(100vh - 70px);
+    width: 100%;
+    overflow-x: hidden;
   }
   
   .Recipes {
     margin-top: 50px;
     padding: 0.5rem 0;
+    width: 100%;
+    min-height: calc(100vh - 50px);
   }
   
   .likedRecipes {
@@ -452,13 +465,19 @@ nav ul li a.active {
   
   .login-layout,
   .signup-layout {
-    margin-top: 50px !important;
-    padding: 0.5rem;
+    margin-top: 70px !important;
+    padding: 1rem;
+    min-height: calc(100vh - 60px);
+    width: 100%;
+    overflow-x: hidden;
   }
   
   .add-recipe-container {
-    margin-top: 70px !important;
-    padding: 0.5rem;
+    margin-top: 80px !important;
+    padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 }
 
