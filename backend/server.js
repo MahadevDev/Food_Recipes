@@ -23,7 +23,8 @@ const allowedOrigins = process.env.CORS_ORIGINS
       'http://localhost:3000',
       'http://localhost:3001',
       'https://food-recipes-3.onrender.com',
-      'https://candid-capybara-1c0045.netlify.app'
+      'https://candid-capybara-1c0045.netlify.app',
+      'https://bright-selkie-1f12d6.netlify.app'
     ];
 
 const corsOptions = {
