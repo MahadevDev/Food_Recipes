@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <div className="pos-f-t">
-      <nav className="navbar navbar-light" style={{backgroundColor: '#4a90e2', color: 'white'}}>
+      <nav className="navbar navbar-light">
         <button 
           className="navbar-toggler" 
           type="button" 
@@ -35,29 +35,29 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="navbar-brand text-white">Recipe Sharing App</div>
+        <div className="navbar-brand">Recipe Sharing App</div>
 
         <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`} id="navbarNav">
           {auth ? (
             <ul className="navbar-nav">
               <li className="nav-item">
-                <NavLink className="nav-link text-white" to="/recipes">
+                <NavLink className="nav-link" to="/recipes">
                   Recipes
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link text-white" to="/add-recipe">
+                <NavLink className="nav-link" to="/add-recipe">
                   Add Recipe
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link text-white" to="/liked-products">
+                <NavLink className="nav-link" to="/liked-products">
                   Favorite Recipes
                 </NavLink>
               </li>
               <li className="nav-item">
                 <button 
-                  className="btn btn-link nav-link text-white px-3" 
+                  className="btn btn-link nav-link px-3" 
                   type="button"
                   onClick={LogoutUser}
                 >
