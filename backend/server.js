@@ -25,7 +25,8 @@ const allowedOrigins = process.env.CORS_ORIGINS
       'https://food-recipes-3.onrender.com',
       'https://candid-capybara-1c0045.netlify.app',
       'https://bright-selkie-1f12d6.netlify.app',
-      'https://legendary-hotteok-321d1a.netlify.app'
+      'https://legendary-hotteok-321d1a.netlify.app',
+      'https://courageous-rabanadas-c28cd3.netlify.app'
     ];
 
 const corsOptions = {
