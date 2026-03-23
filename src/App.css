@@ -358,7 +358,7 @@ nav ul li a.active {
   /* Fix login/register pages */
   .login-layout,
   .signup-layout {
-    margin-top: 60px !important;
+    margin-top: 70px !important;
     padding: 1rem;
     min-height: calc(100vh - 60px);
   }

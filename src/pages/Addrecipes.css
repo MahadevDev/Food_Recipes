@@ -9,7 +9,24 @@
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 6rem;
+    margin-top: 3rem;
+  }
+  
+  /* Mobile responsive styles */
+  @media (max-width: 768px) {
+    .add-recipe {
+        margin-top: 2rem !important;
+        padding: 15px;
+        max-width: 90%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .add-recipe {
+        margin-top: 1.5rem !important;
+        padding: 10px;
+        max-width: 95%;
+    }
   }
   
   .add-recipe h2 {
