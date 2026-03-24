@@ -1924,10 +1924,10 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .SignupContainer {
-    margin: 2px auto 2px;
-    padding: 0.5rem;
-    width: 80%;
-    max-width: 280px;
+    margin: 80px auto 20px;
+    padding: 1rem;
+    width: 90%;
+    max-width: 400px;
     min-height: auto;
   }
 
@@ -2068,4 +2068,39 @@ body {
 
 .Toastify__toast--warning {
   background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%) !important;
+}
+
+/* Small mobile phones - Additional mobile optimization */
+@media (max-width: 576px) {
+  .SignupContainer {
+    margin: 70px auto 20px;
+    padding: 0.8rem;
+    width: 95%;
+    max-width: 350px;
+  }
+
+  .SignupContainer h2 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .SignupContainer form {
+    gap: 0.4rem;
+  }
+
+  .SignupContainer form input {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .SignupContainer form button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .login-layout {
+    margin-top: 2px;
+    padding: 0.1rem;
+    width: 100%;
+  }
 }
