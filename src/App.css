@@ -356,6 +356,46 @@ nav ul li a.active {
 }
 
 /* Mobile responsive fixes */
+/* Large Tablets and Small Desktops (768px - 991px) */
+@media (max-width: 991px) {
+  .pos-f-t {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+  }
+  
+  .navbar {
+    min-height: 60px;
+    padding: 0.5rem 1rem;
+  }
+  
+  .main-content {
+    margin-top: 70px !important;
+    padding: 1rem;
+    min-height: calc(100vh - 70px);
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .Recipes {
+    padding: 1rem 0;
+    margin-top: 70px !important;
+    width: 100%;
+    min-height: calc(100vh - 70px);
+  }
+  
+  .likedRecipes {
+    margin-top: 70px !important;
+    padding: 1rem;
+    max-width: 100%;
+    min-height: calc(100vh - 70px);
+    width: 100%;
+  }
+}
+
+/* Tablets (576px - 767px) */
 @media (max-width: 768px) {
   .pos-f-t {
     position: fixed;
@@ -429,6 +469,7 @@ nav ul li a.active {
   }
 }
 
+/* Small Mobile Phones (480px - 575px) */
 @media (max-width: 576px) {
   .navbar {
     min-height: 50px;
@@ -473,6 +514,100 @@ nav ul li a.active {
   .container, .container-fluid {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+  }
+}
+
+/* Extra Small Mobile Phones (320px - 479px) */
+@media (max-width: 480px) {
+  .navbar {
+    min-height: 45px;
+    padding: 0.2rem 0.4rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1rem;
+  }
+  
+  .main-content {
+    margin-top: 65px !important;
+    padding: 0.4rem;
+    min-height: calc(100vh - 65px);
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .Recipes {
+    margin-top: 65px !important;
+    padding: 0.4rem 0;
+    width: 100%;
+    min-height: calc(100vh - 65px);
+  }
+  
+  .likedRecipes {
+    margin-top: 65px !important;
+    padding: 0.4rem;
+    max-width: 100%;
+    min-height: calc(100vh - 65px);
+    width: 100%;
+  }
+  
+  .container-fluid {
+    padding-top: 65px !important;
+    min-height: calc(100vh - 65px);
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .container, .container-fluid {
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+  }
+}
+
+/* Ultra Small Mobile Phones (≤320px) */
+@media (max-width: 320px) {
+  .navbar {
+    min-height: 40px;
+    padding: 0.1rem 0.3rem;
+  }
+  
+  .navbar-brand {
+    font-size: 0.9rem;
+  }
+  
+  .main-content {
+    margin-top: 60px !important;
+    padding: 0.3rem;
+    min-height: calc(100vh - 60px);
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .Recipes {
+    margin-top: 60px !important;
+    padding: 0.3rem 0;
+    width: 100%;
+    min-height: calc(100vh - 60px);
+  }
+  
+  .likedRecipes {
+    margin-top: 60px !important;
+    padding: 0.3rem;
+    max-width: 100%;
+    min-height: calc(100vh - 60px);
+    width: 100%;
+  }
+  
+  .container-fluid {
+    padding-top: 60px !important;
+    min-height: calc(100vh - 60px);
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .container, .container-fluid {
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
   }
 }
 
