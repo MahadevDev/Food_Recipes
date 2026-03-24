@@ -317,6 +317,46 @@ nav ul li a.active {
   display: block;
 }
 
+/* Ensure hamburger menu is visible on all screen sizes including laptops */
+@media (min-width: 992px) {
+  .navbar-toggler {
+    display: block !important;
+    margin-right: 1rem;
+  }
+  
+  .navbar-collapse {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    margin-top: 8px;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    min-width: 200px;
+  }
+}
+
+/* Desktop and laptop styling */
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar-toggler {
+    display: block !important;
+    margin-right: 1rem;
+  }
+  
+  .navbar-collapse {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    margin-top: 8px;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    min-width: 200px;
+  }
+}
+
 /* Mobile toggle menu improvements */
 @media (max-width: 768px) {
   .navbar-toggler {
