@@ -9,13 +9,13 @@
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 3rem;
+    margin-top: 6rem;
   }
   
   /* Mobile responsive styles */
   @media (max-width: 768px) {
     .add-recipe {
-        margin-top: 2rem !important;
+        margin-top: 4rem !important;
         padding: 15px;
         max-width: 90%;
     }
@@ -23,7 +23,7 @@
   
   @media (max-width: 576px) {
     .add-recipe {
-        margin-top: 1.5rem !important;
+        margin-top: 3rem !important;
         padding: 10px;
         max-width: 95%;
     }
