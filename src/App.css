@@ -292,7 +292,7 @@ nav ul li a.active {
 /* Hamburger menu styling for all devices */
 .navbar-toggler {
   display: block !important;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   background-color: transparent;
   padding: 6px 12px;
   border-radius: 4px;
@@ -302,7 +302,7 @@ nav ul li a.active {
 }
 
 .navbar-toggler:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   transform: scale(1.05);
 }
 
@@ -311,29 +311,39 @@ nav ul li a.active {
 }
 
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   width: 22px;
   height: 22px;
   display: block;
+}
+
+/* Dark navbar collapse styling */
+#navbarToggleExternalContent {
+  position: relative;
+  z-index: 1020;
+}
+
+#navbarToggleExternalContent .navbar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#navbarToggleExternalContent .nav-link {
+  padding: 0.5rem 0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#navbarToggleExternalContent .nav-link:hover {
+  color: #fff !important;
+  text-decoration: underline;
 }
 
 /* Ensure hamburger menu is visible on all screen sizes including laptops */
 @media (min-width: 992px) {
   .navbar-toggler {
     display: block !important;
-    margin-right: 1rem;
-  }
-  
-  .navbar-collapse {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    margin-top: 8px;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    min-width: 200px;
   }
 }
 
@@ -341,19 +351,6 @@ nav ul li a.active {
 @media (min-width: 768px) and (max-width: 991px) {
   .navbar-toggler {
     display: block !important;
-    margin-right: 1rem;
-  }
-  
-  .navbar-collapse {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    margin-top: 8px;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    min-width: 200px;
   }
 }
 

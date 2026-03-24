@@ -23,41 +23,34 @@ const Navbar = () => {
 
   return (
     <div className="pos-f-t">
-      <nav className="navbar navbar-light">
-        <button 
-          className="navbar-toggler" 
-          type="button" 
-          onClick={toggleMenu}
-          aria-controls="navbarNav" 
-          aria-expanded={isOpen ? "true" : "false"}
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        <div className="navbar-brand">Recipe Sharing App</div>
-
-        <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`} id="navbarNav">
-          {auth ? (
-            <ul className="navbar-nav me-auto">
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/recipes" onClick={() => setIsOpen(false)}>
+      <div className={`collapse ${isOpen ? "show" : ""}`} id="navbarToggleExternalContent">
+        <div className="bg-dark p-4">
+          <div className="navbar-nav">
+            {auth ? (
+              <>
+                <NavLink 
+                  className="nav-link text-white mb-2" 
+                  to="/recipes" 
+                  onClick={() => setIsOpen(false)}
+                >
                   Recipes
                 </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/add-recipe" onClick={() => setIsOpen(false)}>
+                <NavLink 
+                  className="nav-link text-white mb-2" 
+                  to="/add-recipe" 
+                  onClick={() => setIsOpen(false)}
+                >
                   Add Recipe
                 </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/liked-products" onClick={() => setIsOpen(false)}>
+                <NavLink 
+                  className="nav-link text-white mb-2" 
+                  to="/liked-products" 
+                  onClick={() => setIsOpen(false)}
+                >
                   Favorite Recipes
                 </NavLink>
-              </li>
-              <li className="nav-item">
                 <button 
-                  className="btn btn-link nav-link px-3" 
+                  className="btn btn-link nav-link text-white mb-2" 
                   type="button"
                   onClick={() => {
                     LogoutUser();
@@ -66,13 +59,25 @@ const Navbar = () => {
                 >
                   Logout
                 </button>
-              </li>
-            </ul>
-          ) : (
-            <div className="ms-auto">
-            </div>
-          )}
+              </>
+            ) : (
+              <span className="text-muted">Please login to access navigation</span>
+            )}
+          </div>
         </div>
+      </div>
+      <nav className="navbar navbar-dark bg-dark">
+        <div className="navbar-brand text-white">Recipe Sharing App</div>
+        <button 
+          className="navbar-toggler" 
+          type="button" 
+          onClick={toggleMenu}
+          aria-controls="navbarToggleExternalContent" 
+          aria-expanded={isOpen ? "true" : "false"}
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
       </nav>
     </div>
   );
