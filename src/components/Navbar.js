@@ -39,19 +39,19 @@ const Navbar = () => {
 
         <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`} id="navbarNav">
           {auth ? (
-            <ul className="navbar-nav">
+            <ul className="navbar-nav me-auto">
               <li className="nav-item">
-                <NavLink className="nav-link" to="/recipes">
+                <NavLink className="nav-link" to="/recipes" onClick={() => setIsOpen(false)}>
                   Recipes
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/add-recipe">
+                <NavLink className="nav-link" to="/add-recipe" onClick={() => setIsOpen(false)}>
                   Add Recipe
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/liked-products">
+                <NavLink className="nav-link" to="/liked-products" onClick={() => setIsOpen(false)}>
                   Favorite Recipes
                 </NavLink>
               </li>
@@ -59,7 +59,10 @@ const Navbar = () => {
                 <button 
                   className="btn btn-link nav-link px-3" 
                   type="button"
-                  onClick={LogoutUser}
+                  onClick={() => {
+                    LogoutUser();
+                    setIsOpen(false);
+                  }}
                 >
                   Logout
                 </button>

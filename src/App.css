@@ -380,9 +380,9 @@ nav ul li a.active {
   
   .Recipes {
     padding: 1rem 0;
-    margin-top: 60px;
+    margin-top: 80px !important;
     width: 100%;
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 80px);
   }
   
   .recipe-card {
@@ -395,6 +395,7 @@ nav ul li a.active {
     padding: 1rem;
     max-width: 100%;
     min-height: calc(100vh - 80px);
+    width: 100%;
   }
   
   /* Fix all page containers */
@@ -443,41 +444,35 @@ nav ul li a.active {
   }
   
   .Recipes {
-    margin-top: 50px;
+    margin-top: 70px !important;
     padding: 0.5rem 0;
     width: 100%;
-    min-height: calc(100vh - 50px);
+    min-height: calc(100vh - 70px);
   }
   
   .likedRecipes {
     margin-top: 70px !important;
     padding: 0.5rem;
     max-width: 100%;
+    min-height: calc(100vh - 70px);
+    width: 100%;
   }
   
   .container-fluid {
     padding-top: 70px !important;
+    min-height: calc(100vh - 70px);
+    width: 100%;
+    overflow-x: hidden;
   }
   
   .App > div:last-child {
     margin-top: 50px;
+    width: 100%;
   }
   
-  .login-layout,
-  .signup-layout {
-    margin-top: 80px !important;
-    padding: 1rem;
-    min-height: calc(100vh - 80px);
-    width: 100%;
-    overflow-x: hidden;
-  }
-  
-  .add-recipe-container {
-    margin-top: 80px !important;
-    padding: 1rem;
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
+  .container, .container-fluid {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }
 
