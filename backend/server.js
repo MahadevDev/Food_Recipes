@@ -26,7 +26,8 @@ const allowedOrigins = process.env.CORS_ORIGINS
       'https://candid-capybara-1c0045.netlify.app',
       'https://bright-selkie-1f12d6.netlify.app',
       'https://legendary-hotteok-321d1a.netlify.app',
-      'https://courageous-rabanadas-c28cd3.netlify.app'
+      'https://courageous-rabanadas-c28cd3.netlify.app',
+      'https://dancing-babka-93a86b.netlify.app'
     ];
 
 const corsOptions = {
