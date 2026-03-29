@@ -57,6 +57,13 @@ const Navbar = () => {
             >
               Favorite Recipes
             </NavLink>
+            <NavLink
+              className="nav-link text-white"
+              to="/owner-information"
+              onClick={() => setShowNav(false)}
+            >
+              Owner Information
+            </NavLink>
             <button 
               className="btn btn-link nav-link text-white" 
               type="button"

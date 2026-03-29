@@ -11,6 +11,7 @@ const AuthPage = ({ initialMode = "login" }) => {
     name: "",
     email: "",
     password: "",
+    phone: "",
   });
   const [forgotForm, setForgotForm] = useState({ email: "", password: "" });
   const [showError, setShowError] = useState(false);
@@ -163,6 +164,7 @@ const AuthPage = ({ initialMode = "login" }) => {
           name: registerForm.name,
           email: normalizeEmail(registerForm.email),
           password: registerForm.password,
+          phone: registerForm.phone,
         }),
       });
 
@@ -262,6 +264,17 @@ const AuthPage = ({ initialMode = "login" }) => {
                     ...prev,
                     password: e.target.value,
                   }))
+                }
+              />
+            </div>
+            <div className="input-group">
+              <label>Phone Number</label>
+              <input
+                type="tel"
+                placeholder="Enter your phone number"
+                value={registerForm.phone}
+                onChange={(e) =>
+                  setRegisterForm((prev) => ({ ...prev, phone: e.target.value }))
                 }
               />
             </div>

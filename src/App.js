@@ -8,6 +8,7 @@ import Recipes from './components/Recipes';
 import AddRecipe from './components/AddRecipe';
 import LikedProducts from './components/LikedProducts';
 import ForgotPassword from './components/Forgot';
+import OwnerInformation from './components/OwnerInformation';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/recipes" element={<Recipes />} />
           <Route path="/add-recipe" element={<AddRecipe />} />
           <Route path="/liked-products" element={<LikedProducts />} />
+          <Route path="/owner-information" element={<OwnerInformation />} />
         </Route>
 
         {/* Optional: fallback route */}
