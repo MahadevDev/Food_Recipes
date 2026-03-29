@@ -28,8 +28,22 @@ const allowedOrigins = process.env.CORS_ORIGINS
       'https://legendary-hotteok-321d1a.netlify.app',
       'https://courageous-rabanadas-c28cd3.netlify.app',
       'https://dancing-babka-93a86b.netlify.app',
-      'https://incandescent-fenglisu-b846ad.netlify.app'
+      'https://incandescent-fenglisu-b846ad.netlify.app',
+      'https://lucky-syrniki-d1a59c.netlify.app'
     ];
+
+const allowedOriginPatterns = [
+  /^https:\/\/[a-z0-9-]+\.netlify\.app$/i,
+  /^https:\/\/[a-z0-9-]+--[a-z0-9-]+\.netlify\.app$/i,
+];
+
+const isAllowedOrigin = (origin) => {
+  const normalizedOrigin = String(origin || '').trim().replace(/\/$/, '');
+  return (
+    allowedOrigins.includes(normalizedOrigin) ||
+    allowedOriginPatterns.some((pattern) => pattern.test(normalizedOrigin))
+  );
+};
 
 const corsOptions = {
   origin: (origin, callback) => {
@@ -37,7 +51,7 @@ const corsOptions = {
     if (!origin) return callback(null, true);
 
     // Check if origin is in allowed list
-    if (allowedOrigins.includes(origin)) {
+    if (isAllowedOrigin(origin)) {
       return callback(null, true);
     }
 
