@@ -70,39 +70,6 @@ const RecipeCard = ({
     onCloseRecipe && onCloseRecipe(recipe._id);
   };
 
-  const handleShare = (platform) => {
-    const recipeUrl = `${window.location.origin}/recipes/${recipe._id}`;
-    const recipeTitle = recipe.title;
-    const recipeDescription = recipe.description || `Check out this amazing ${recipeTitle} recipe!`;
-    
-    let shareUrl = '';
-    
-    switch(platform) {
-      case 'whatsapp':
-        shareUrl = `https://wa.me/?text=${encodeURIComponent(`${recipeTitle} - ${recipeDescription} ${recipeUrl}`)}`;
-        break;
-      case 'instagram':
-        // Instagram doesn't support direct URL sharing, so we copy to clipboard
-        navigator.clipboard.writeText(`${recipeTitle} - ${recipeDescription} ${recipeUrl}`);
-        toast.info('Recipe link copied! Share it on Instagram 📸');
-        return;
-      case 'facebook':
-        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(recipeUrl)}&quote=${encodeURIComponent(recipeDescription)}`;
-        break;
-      case 'twitter':
-        shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`${recipeTitle} - ${recipeDescription}`)}&url=${encodeURIComponent(recipeUrl)}`;
-        break;
-      case 'copy':
-        navigator.clipboard.writeText(`${recipeTitle} - ${recipeDescription} ${recipeUrl}`);
-        toast.success('Recipe link copied to clipboard! 📋');
-        return;
-      default:
-        return;
-    }
-    
-    window.open(shareUrl, '_blank', 'width=600,height=400');
-  };
-
   // Generate unique image based on recipe title and category
   const getRecipeImage = (title, category) => {
     // Category-specific image mappings
@@ -194,9 +161,9 @@ const RecipeCard = ({
 
     // If no specific match, use category-based image
     if (!selectedImage && category && categoryImages[category]) {
-      const categoryImages = categoryImages[category];
-      const categoryIndex = title.length % categoryImages.length;
-      selectedImage = categoryImages[categoryIndex];
+      const imagesForCategory = categoryImages[category];
+      const categoryIndex = title.length % imagesForCategory.length;
+      selectedImage = imagesForCategory[categoryIndex];
     }
 
     // Final fallback to general food images
