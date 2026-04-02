@@ -4,6 +4,12 @@ const jwt = require("jsonwebtoken");
 const Login = async (req, res) => {
   try {
     const { email, password } = req.body;
+
+    const emailRegex = /^(?=.*[a-z])(?=.*\d)[a-z0-9]{5,12}@gmail\.com$/i;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ error: "Email is invalid." });
+    }
+
     const user = await User.findOne({ email });
 
     if (!user) {

@@ -11,6 +11,7 @@ const registerRoutes = require('./routes/Register');
 const recipeRoutes = require('./routes/recipeRoutes');
 const loginRoutes = require('./routes/Login');
 const forgotPasswordRoutes = require('./routes/forgotpassword');
+const otpRoutes = require('./routes/otp');
 
 const app = express();
 
@@ -106,6 +107,7 @@ app.use('/auth', registerRoutes);
 app.use('/auth', loginRoutes);
 app.use('/auth', forgotPasswordRoutes);
 app.use('/auth', recipeRoutes);
+app.use('/auth', otpRoutes);
 
 // === Start Server ===
 

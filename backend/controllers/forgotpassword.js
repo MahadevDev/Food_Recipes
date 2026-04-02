@@ -5,6 +5,23 @@ const ForgotPassword = async (req, res) => {
   try {
     const { email, newPassword } = req.body;
 
+    if (!email || !newPassword) {
+      return res.status(400).json({ error: "Email and new password are required" });
+    }
+
+    const emailRegex = /^(?=.*[a-z])(?=.*\d)[a-z0-9]{5,12}@gmail\.com$/i;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ error: "Email is invalid." });
+    }
+
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/;
+    if (!passwordRegex.test(newPassword)) {
+      return res.status(400).json({
+        error:
+          "Password must be at least 8 characters and include uppercase, lowercase, number, and special character",
+      });
+    }
+
     // Check if user exists
     const user = await User.findOne({ email: email.toLowerCase() });
     if (!user) {
@@ -12,7 +29,7 @@ const ForgotPassword = async (req, res) => {
     }
 
     // Hash the new password
-    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    const hashedPassword = await bcrypt.hash(newPassword, 12);
 
     // Update user's password
     await User.updateOne(

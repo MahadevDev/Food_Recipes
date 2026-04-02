@@ -11,6 +11,7 @@ const {
   getAllLikedRecipes,
   removeFromLikedRecipes,
   searchRecipes,
+  addRecipeReview,
 } = require("../controllers/recipeControl");
 
 // Protected: Get all recipes
@@ -21,6 +22,12 @@ router.post("/recipe", verifyToken, createRecipe);
 
 // Protected: Update a recipe by ID
 router.put("/recipe/:id", verifyToken, updateRecipe);
+
+// Protected: Add rating/review/comment to recipe
+router.post("/recipe/:id/reviews", verifyToken, addRecipeReview);
+
+// Compatibility alias for review endpoint
+router.post("/recipe/reviews/:id", verifyToken, addRecipeReview);
 
 // Protected: Get liked recipes
 router.get("/likedRecipes", verifyToken, getAllLikedRecipes);

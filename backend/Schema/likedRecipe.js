@@ -5,6 +5,17 @@ const LikedRecipes = new mongoose.Schema({
     type: String,
     required: true,
   },
+  category: {
+    type: String,
+    default: "Other",
+    trim: true,
+  },
+  recipeType: {
+    type: String,
+    enum: ['All', 'Vegetarian', 'Non-Vegetarian', 'Other'],
+    default: 'Other',
+    trim: true,
+  },
   description: {
     type: String,
     default: "",

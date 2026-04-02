@@ -4,7 +4,28 @@ const jwt = require("jsonwebtoken");
 
 const Register = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password, confirmPassword } = req.body;
+
+    if (!name || !email || !password || !confirmPassword) {
+      return res.status(400).json({ error: "All required fields must be provided" });
+    }
+
+    const emailRegex = /^(?=.*[a-z])(?=.*\d)[a-z0-9]{5,12}@gmail\.com$/i;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ error: "Email is invalid." });
+    }
+
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/;
+    if (!passwordRegex.test(password)) {
+      return res.status(400).json({
+        error:
+          "Password must be at least 8 characters and include uppercase, lowercase, number, and special character",
+      });
+    }
+
+    if (password !== confirmPassword) {
+      return res.status(400).json({ error: "Password and confirm password must match" });
+    }
 
     // Check if user already exists
     const userExists = await User.findOne({ email });
@@ -13,10 +34,14 @@ const Register = async (req, res) => {
     }
 
     // Hash the password
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = await bcrypt.hash(password, 12);
 
     // Create new user in DB
-    const newUser = await User.create({ name, email, password: hashedPassword });
+    const newUser = await User.create({
+      name,
+      email,
+      password: hashedPassword,
+    });
 
     // Create JWT token (expires in 1 hour)
     const token = jwt.sign({ email: newUser.email, id: newUser._id }, process.env.SECRET, {
